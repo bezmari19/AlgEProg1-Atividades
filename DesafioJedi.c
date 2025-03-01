@@ -1,5 +1,5 @@
 #include <stdio.h> 
-/*Primeira parte*/
+/*Escreva um programa que converta um intervalo de tempo dado em segundos, em: horas, minutos e segundos.*/
 int main(void) {
   int quantosSegundos;
   printf("Digite a quantidade dos segundos contados aqui:\n");
