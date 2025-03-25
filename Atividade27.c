@@ -9,28 +9,29 @@ int main(void) {
     int numeroEscolhidoUsuario;
     int tentativas = 3;
 
-  printf("Bem vindo ao jogo do Dado Mágico! Você terá 3 tentativas para adivinhar o número sorteado, e só pode escolher um número entre 1 e 10. Bom jogo e boa sorte!\n");
+    printf("Bem vindo ao jogo do Dado Mágico! Você terá 3 tentativas para adivinhar o número sorteado, e só pode escolher um número entre 1 e 10. Bom jogo e boa sorte!\n");
 
-  printf("Agora, digite o número escolhido:\n\n");
-  scanf("%d", &numeroEscolhidoUsuario);
+    while (tentativas > 0) {
+        printf("\nAgora, digite o número escolhido:\n");
+        scanf("%d", &numeroEscolhidoUsuario);
 
-  if (numeroEscolhidoUsuario != numeroSorteado && numeroEscolhidoUsuario > numeroSorteado ) {
-    printf("Ops, acho que não é esse número. O número sorteado pelo dado é menor que esse aqui.Você tem %d tentativas:\n", tentativas);
-  }
-  else if (numeroEscolhidoUsuario != numeroSorteado && numeroEscolhidoUsuario < numeroSorteado) {
-    printf("De novo? Não é esse número. O dado escolheu um número maior que esse. Você tem %d tentativas:\n", tentativas);
-  } 
-  else if (numeroEscolhidoUsuario == numeroSorteado && tentativas == 3) {
-    printf("Parabéns! Você acertou o número escolhido pelo Dado Mágico na 1ª tentativa! O número sorteado foi %d.", numeroSorteado);
-  } 
-  else if (numeroEscolhidoUsuario == numeroSorteado && tentativas == 2) {
-    printf("Parabéns! Você acertou o número escolhido pelo Dado Mágico na 2ª tentativa! O número sorteado foi %d.", numeroSorteado);
-  }
-  else if (numeroEscolhidoUsuario == numeroSorteado && tentativas == 1) {
-    printf("Parabéns! Você acertou o número escolhido pelo Dado Mágico na 3ª tentativa. O número sorteado foi %d.", numeroSorteado);
-  }
-  else {
-      printf("Eu sinto muito, suas chances acabaram aqui. O número sorteado pelo Dado Mágico foi %d. Tente novamente!", numeroSorteado);
+        if (numeroEscolhidoUsuario == numeroSorteado) {
+            printf("Parabéns! Você acertou o número escolhido pelo Dado Mágico! O número sorteado foi %d.\n", numeroSorteado);
+            break;
+        } else if (numeroEscolhidoUsuario > numeroSorteado) {
+            printf("Ops, acho que não é esse número. O número sorteado pelo dado é menor que esse aqui.\n");
+        } else {
+            printf("De novo? Não é esse número. O dado escolheu um número maior que esse.\n");
+        }
+
+        tentativas--;
+
+        if (tentativas > 0) {
+            printf("Você ainda tem %d tentativa(s).\n", tentativas);
+        } else {
+            printf("Eu sinto muito, suas chances acabaram aqui. O número sorteado pelo Dado Mágico foi %d. Tente novamente!\n", numeroSorteado);
+        }
     }
-  return 0;
+
+    return 0;
 }
