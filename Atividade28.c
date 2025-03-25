@@ -1,0 +1,1 @@
+/*Escreva um programa que sorteia um número de 1 a 10, dá duas chances para que o usuário acerte, mas dá uma pista após a primeira tentativa, dizendo se o número sorteado é maior ou menor que o primeiro palpite.*/
